@@ -1,0 +1,101 @@
+/* Tables */
+
+table#addNews input.textbox, table#editNews input.textbox, table#settings input.textbox, table#addCategory input.textbox, table#editCategory input.textbox {
+	width: 80%;
+	padding: 5px;
+}
+
+table#addNews td.help {
+	width: 30%;
+}
+
+table.fieldset td.field, table.fieldset td.help {
+	vertical-align: top;
+	padding-top: 10px;
+}
+
+table.fieldset td.label, table#addNews td.label {
+	border-right: 1px solid #c6c6c6;
+	font-size: small;
+}
+
+table.fieldset td.title {
+	font-weight: bold;
+	color: #FFF;
+	background-color: #c6c6c6;
+}
+
+input.smallText {
+	border: 1px solid #c0c0c0;
+	padding: 5px;
+	width: 30px;
+}
+
+
+/* Tags */
+
+#currentTags a {
+	padding: 5px;
+	border-radius: 5px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	text-decoration: none;
+}
+
+#currentTags a:hover {
+	color: white;
+	background:#c5cdb8;
+}
+
+.selected {
+	background:#74cd0d;
+	color:#fff;
+}
+
+#currentTags a.selected:hover {
+	background:#c06359;
+}
+
+input#tags {
+	font-size: small;
+}
+
+/* Misc */
+
+p.deletedArticle, p.deletedCategory {
+	font-weight: bold;
+	text-shadow: 0px 1px 2px black;
+	color: white;
+	background-color: #bd5858;
+	border: 1px solid #7e3033;
+	padding: 20px;
+	border-radius: 5px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+}
+
+p.deletedArticle a, p.deletedCategory a {
+	color: white;
+}
+
+p.noArticlesYet, p.noCategoriesYet {
+	text-align: center;
+	font-weight: bold;
+	text-shadow: 0px 1px 1px black;
+	color: white;
+	background-color: #85b12f;
+	border: 1px solid #407e3e;
+	padding: 20px;
+	border-radius: 5px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+}
+
+p.noArticlesYet a, p.noCategoriesYet a {
+	color: white;
+}
+
+/* Categories */
+span.subFiller {
+	padding-left: 4px;
+}
