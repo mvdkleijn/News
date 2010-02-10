@@ -144,14 +144,7 @@ foreach($allCategories as $category) {
 			</td>
 			<td class="help">You need to set an image for each article. You can pick an image from any album.</a></td>
 		</tr>
-<?php	} else { ?>
-		<tr>
-			<td class="label"></td>
-			<td class="field" colspan="2">
-				<small><em>If you install the <a href="http://www.band-x.org/downloads/albums">Album</a> plugin, you can start associating images from your site to your news articles as well! OMG! kthxbai</em></small>
-			</td>
-		</tr>
-<?php	} ?>
+<?php	}  ?>
 		<tr>
 			<td class="label">Intro</td>
 			<td class="field"><textarea name="intro" id="intro" class="textbox" style="height:50px"><?php echo $article->intro; ?></textarea></td>
