@@ -66,11 +66,6 @@ if(Plugin::isEnabled('news')) {
 		'/news'														=>	'/plugin/news/index',
 		'/news/'													=>	'/plugin/news/index',
 
-		'/news/page'												=>	'/plugin/news/index/1',
-		'/news/page/'												=>	'/plugin/news/index/1',
-		'/news/page/:num'											=>	'/plugin/news/index/$1',
-		'/news/page/:num/'											=>	'/plugin/news/index/$1',
-
 		'/news/noEditor'											=>	'/plugin/news/noEditor',
 		'/news/documentation'										=>	'/plugin/news/documentation',
 		'/news/trash'												=>	'/plugin/news/trash',
@@ -95,6 +90,10 @@ if(Plugin::isEnabled('news')) {
 
 		'/'.$settings['folder'].''									=>	'/plugin/news/index',
 		'/'.$settings['folder'].'/'									=>	'/plugin/news/index',
+		'/'.$settings['folder'].'/page'								=>	'/plugin/news/index/1',
+		'/'.$settings['folder'].'/page/'							=>	'/plugin/news/index/1',
+		'/'.$settings['folder'].'/page/:num'						=>	'/plugin/news/index/$1',
+		'/'.$settings['folder'].'/page/:num/'						=>	'/plugin/news/index/$1',
 		'/'.$settings['folder'].'/:num/:num/:num/:any'				=>	'/plugin/news/article/$4/$1/$2/$3',
 		'/'.$settings['folder'].'/:num/:num/:num'					=>	'/plugin/news/viewBy/$1/$2/$3',
 		'/'.$settings['folder'].'/:num/:num/:num/'					=>	'/plugin/news/viewBy/$1/$2/$3',
@@ -132,4 +131,5 @@ if(Plugin::isEnabled('news')) {
 		'/permalink/'.$settings['folder'].'/:any/'					=>	'/plugin/news/article/$1',
 
 	));
+
 }
