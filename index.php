@@ -67,6 +67,7 @@ if(Plugin::isEnabled('news')) {
 		'/news/'													=>	'/plugin/news/index',
 
 		'/news/noEditor'											=>	'/plugin/news/noEditor',
+		'/news/notConfigured'										=>	'/plugin/news/notConfigured',
 		'/news/documentation'										=>	'/plugin/news/documentation',
 		'/news/trash'												=>	'/plugin/news/trash',
 		'/news/restore/:num'										=>	'/plugin/news/restore/$1',
@@ -78,6 +79,7 @@ if(Plugin::isEnabled('news')) {
 		'/news/updateArticle'										=>	'/plugin/news/updateArticle',
 		'/news/settings'											=>	'/plugin/news/settings',
 		'/news/saveSettings'										=>	'/plugin/news/saveSettings',
+		'/news/saveSettings/:any'									=>	'/plugin/news/saveSettings/$1',
 
 		'/news/categories'											=>	'/plugin/news/categories',
 		'/news/category/:any'										=>	'/plugin/news/categories/$1',

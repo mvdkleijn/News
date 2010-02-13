@@ -52,6 +52,11 @@ class NewsController extends PluginController {
 			if(Article::countEditors() == 0 && $slug != 'noEditor') {
 				redirect(get_url('news/noEditor'));
 			}
+			if(News::checkLayoutsAreConfigured() == 0) {
+				if($slug != 'notConfigured' && $slug != 'saveSettings' && $slug != 'settings') {
+					redirect(get_url('news/notConfigured'));				
+				}
+			}
 		} else {
 			$layout = Layout::findById($settings['listingLayout']);
 			$this->setLayout($layout->name);
@@ -101,6 +106,14 @@ class NewsController extends PluginController {
 	public function noEditor() {
 		if(defined('CMS_BACKEND')) {
 			$this->display('../plugins/news/views/backend/noEditor');
+		}
+	}
+
+	public function notConfigured() {
+		if(defined('CMS_BACKEND')) {
+			$settings = Plugin::getAllSettings('news');
+			$layouts = Layout::findAll();
+			$this->display('../plugins/news/views/backend/notConfigured', array('settings' => $settings, 'layouts' => $layouts));
 		}
 	}
 
@@ -164,13 +177,17 @@ class NewsController extends PluginController {
 		}
 	}
 
-	public function saveSettings() {
+	public function saveSettings($referrer=NULL) {
 		if(defined('CMS_BACKEND')) {
 			if (AuthUser::hasPermission('administrator,developer')) {
 				News::saveSettings($_POST);
 				Observer::notify('news_settings_updated');
 				Flash::set('success', __('Your settings have been updated'));
-				redirect(get_url('news/settings'));
+				if($referrer == 'notConfigured') {
+					redirect(get_url('news/notConfigured'));
+				} else {
+					redirect(get_url('news/settings'));
+				}
 			}
 		}
 	}

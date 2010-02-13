@@ -35,28 +35,9 @@
 
 	global $__CMS_CONN__;
 
-	$title = Setting::get('admin_title');
-
 	/**
 		Sanity Check - decide whether we're enabling for the first time or after a disable
 	**/
-
-	$sql = "SELECT layout_id FROM `".TABLE_PREFIX."page` WHERE id='1';";
-	$pdo = $__CMS_CONN__->prepare($sql);
-	$pdo->execute();
-	$result = $pdo->fetch(PDO::FETCH_ASSOC);
-	$layout = $result['layout_id'];
-
-	$sql = "SELECT layout_id FROM `".TABLE_PREFIX."page` WHERE title='RSS Feed';";
-	$pdo = $__CMS_CONN__->prepare($sql);
-	$pdo->execute();
-	$result = $pdo->fetch(PDO::FETCH_ASSOC);
-
-	if(count($result) != 0) {
-		$rssLayout = $result['layout_id'];
-	} else {
-		$rssLayout = 0;
-	}
 
 	$sql = "SELECT * FROM `".TABLE_PREFIX."plugin_settings` WHERE plugin_id='albums';";
 	$pdo = $__CMS_CONN__->prepare($sql);
@@ -73,12 +54,12 @@
 						('news','pagesToDisplay','0'),
 						('news','fullImageWidth','700'),
 						('news','shortImageWidth','400'),
-						('news','articleLayout','$layout'),
-						('news','rssLayout','$rssLayout'),
-						('news','listingLayout','$layout'),
-						('news','pagenotfoundLayout','$layout'),
-						('news','viewByLayout','$layout'),
-						('news','rssTitle','$title'),
+						('news','articleLayout',''),
+						('news','rssLayout',''),
+						('news','listingLayout',''),
+						('news','pagenotfoundLayout',''),
+						('news','viewByLayout',''),
+						('news','rssTitle','RSS Feed'),
 						('news','rssShowAuthor','yes'),
 						('news','rssContent','both'),
 						('news','editorsAllowedCategories','no')

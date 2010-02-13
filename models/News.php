@@ -75,4 +75,21 @@ class News {
 		}
 	}
 
+	public function checkLayoutsAreConfigured() {
+		$settings = Plugin::getAllSettings('news');
+		if($settings['viewByLayout'] == 0 || $settings['viewByLayout'] == NULL) {
+			return 0;
+		} elseif($settings['pagenotfoundLayout'] == 0 || $settings['pagenotfoundLayout'] == NULL) {
+			return 0;
+		} elseif ($settings['listingLayout'] == 0 || $settings['listingLayout'] == NULL) {
+			return 0;
+		} elseif($settings['rssLayout'] == 0 || $settings['rssLayout'] == NULL) {
+			return 0;
+		} elseif($settings['articleLayout'] == 0 || $settings['articleLayout'] == NULL) {
+			return 0;
+		} else {
+			return 1;		
+		}
+	}
+
 }
