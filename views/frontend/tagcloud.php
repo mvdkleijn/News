@@ -5,10 +5,9 @@
 
 $tags = Tag::countTags();
 $max = Tag::maxCount();
-$maxEM = 2;
-
+$maxEM = 3;
 foreach($tags as $tag) {
-	$size = ($tag->count / $max);
+	$size = ($max / $maxEM) * $tag->count;
 	if($size < 0.9) $size = 0.9;
 	if($size > $maxEM) $size = $maxEM;
 
